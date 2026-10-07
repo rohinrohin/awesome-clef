@@ -4,10 +4,10 @@
   --gray-1: #dedede;
   --gray-2: #c4c4c4;
   --gray-3: #7a7a7a;
-  --pink: #f386a1;
-  --pink-hot: #ff4fd8;
-  --magenta: #d45bb6;
-  --sky: #d9f1ff;
+  --pink: #fbad41;      /* Cloudflare amber (was pink) */
+  --pink-hot: #f6821f;  /* Cloudflare orange (was hot pink) */
+  --magenta: #e5620a;   /* deep orange (was magenta) */
+  --sky: #fff1e3;       /* warm cream (was sky) */
   --teal: #09aea1;
 
   --display: 'Inter Tight', 'Inter', system-ui, sans-serif;
@@ -80,11 +80,11 @@ code { font-size: 0.92em; background: var(--gray-1); padding: 0 4px; }
   justify-content: center;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 34% 55% at 6% 30%, var(--pink-hot) 0%, rgba(255,79,216,0.55) 40%, rgba(255,79,216,0) 70%),
-    radial-gradient(ellipse 40% 60% at 96% 28%, var(--pink-hot) 0%, rgba(255,79,216,0.5) 45%, rgba(255,79,216,0) 72%),
-    radial-gradient(ellipse 60% 40% at 20% 100%, var(--pink) 0%, rgba(243,134,161,0) 70%),
-    radial-gradient(ellipse 60% 40% at 80% 100%, var(--pink) 0%, rgba(243,134,161,0) 70%),
-    linear-gradient(180deg, var(--sky) 0%, #eaf6ff 60%, var(--paper) 100%);
+    radial-gradient(ellipse 34% 55% at 6% 30%, var(--pink-hot) 0%, rgba(246,130,31,0.55) 40%, rgba(246,130,31,0) 70%),
+    radial-gradient(ellipse 40% 60% at 96% 28%, var(--pink-hot) 0%, rgba(246,130,31,0.5) 45%, rgba(246,130,31,0) 72%),
+    radial-gradient(ellipse 60% 40% at 20% 100%, var(--pink) 0%, rgba(251,173,65,0) 70%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, var(--pink) 0%, rgba(251,173,65,0) 70%),
+    linear-gradient(180deg, var(--sky) 0%, #fff7ee 60%, var(--paper) 100%);
 }
 .hero::before {
   content: "";
