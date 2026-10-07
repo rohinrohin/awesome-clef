@@ -1067,16 +1067,17 @@
       "pushed": "2026-10-06"
     },
     {
-      "name": "clef-pictionary",
+      "name": "Clef Pictionary",
       "repo": "jillesme/clef-pictionary",
-      "site": null,
-      "description": "Pictionary where Clef (a decision model on Workers AI) guesses your drawing live",
+      "site": "https://clef.jilles.fyi",
+      "description": "Pictionary where Clef-flash on Workers AI guesses your drawing live, with per-word probabilities and an art critic score.",
       "category": "demos",
       "language": "TypeScript",
       "stars": 1,
       "added": "2026-10-07",
       "created": "2026-10-06",
-      "pushed": "2026-10-06"
+      "pushed": "2026-10-06",
+      "post": "https://x.com/Jilles/status/2107572830225199403"
     },
     {
       "name": "odds",

@@ -109,7 +109,7 @@ Products, services, and pipelines that call Clef.
 Playgrounds, games, and small experiments you can run.
 
 - [clef-webcam](https://github.com/lucataco/clef-webcam) - Run Cloudflare's clef-flash decision model locally on your webcam.
-- [clef-pictionary](https://github.com/jillesme/clef-pictionary) - Pictionary where Clef (a decision model on Workers AI) guesses your drawing live.
+- [Clef Pictionary](https://github.com/jillesme/clef-pictionary) ([site](https://clef.jilles.fyi), [post](https://x.com/Jilles/status/2107572830225199403)) - Pictionary where Clef-flash on Workers AI guesses your drawing live, with per-word probabilities and an art critic score.
 - [blind-earth-clef-jev](https://github.com/dylanler/blind-earth-clef-jev) - Blind-Earth land/water maps with Cloudflare Clef / Clef-flash and TypeSafe Jev (System One choice).
 - [bot-club](https://github.com/jackdnl/bot-club) - A playful AI nightclub. Cloudflare Clef-flash decides who gets in, live.
 - [clef-airy](https://github.com/ajdunn2/clef-airy) - Mac/Win Electron app for testing Jev, System One, and similar decision APIs inc. local models like Clef with Ollama. Build requests using forms or JSON and explore structured responses. Made with NativePHP.
