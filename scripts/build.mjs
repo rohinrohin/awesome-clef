@@ -83,65 +83,68 @@ Pull requests welcome. Edit \`data/projects.json\` (it drives both this README a
 writeFileSync(resolve(root, "README.md"), readme);
 
 // ---------- Site ----------
-const catTitle = Object.fromEntries(categories.map((c) => [c.id, c.short || c.title]));
-const ICON_ARROW = `<svg viewBox="0 0 16 16" aria-hidden="true" class="size-4 shrink-0 fill-current"><path fill-rule="evenodd" d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z" clip-rule="evenodd"/></svg>`;
-const ICON_STAR = `<svg viewBox="0 0 16 16" aria-hidden="true" class="size-4 shrink-0 fill-brand-500"><path fill-rule="evenodd" d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z" clip-rule="evenodd"/></svg>`;
-const hostOf = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return "Link"; } };
-const link = (href, label) =>
-  `<a href="${esc(href)}" class="relative z-10 flex items-center gap-1 font-medium text-brand-700 hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300">${label}${ICON_ARROW}</a>`;
 const linkIcons = (p) => {
   const out = [];
-  if (p.repo) out.push(link(`https://github.com/${p.repo}`, "GitHub"));
-  if (p.site) out.push(link(p.site, "Site"));
-  if (p.post) out.push(link(p.post, "Post"));
-  if (!p.repo && !p.site && p.url) out.push(link(p.url, esc(hostOf(p.url))));
-  return out.join("");
+  if (p.repo) out.push(`<a href="https://github.com/${esc(p.repo)}" title="GitHub repository">[repo]</a>`);
+  if (p.site) out.push(`<a href="${esc(p.site)}" title="Website">[site]</a>`);
+  if (p.post) out.push(`<a href="${esc(p.post)}" title="Post on X">[post]</a>`);
+  if (!p.repo && !p.site && p.url) out.push(`<a href="${esc(p.url)}" title="Link">[link]</a>`);
+  return `<span class="links">${out.join("")}</span>`;
 };
 
 const row = (p) => {
-  const text = [p.name, p.description, p.language, ownerOf(p), p.category, catTitle[p.category]].filter(Boolean).join(" ").toLowerCase();
+  const text = [p.name, p.description, p.language, ownerOf(p), p.category].filter(Boolean).join(" ").toLowerCase();
   const owner = ownerOf(p);
-  const meta = [p.language, catTitle[p.category]].filter(Boolean).map(esc).join(" · ");
-  return `<li class="item relative flex flex-col gap-2 rounded-xl bg-white p-5 ring-1 ring-stone-950/10 hover:ring-brand-500/60 dark:bg-stone-900 dark:ring-white/10 dark:hover:ring-brand-500/50" data-name="${esc(p.name.toLowerCase())}" data-stars="${p.stars || 0}" data-added="${esc(p.added || "")}" data-text="${esc(text)}">
-  <div class="flex items-baseline gap-2">
-    <h3 class="min-w-0 text-base font-semibold [overflow-wrap:anywhere]"><a href="${esc(primaryUrl(p))}" class="hover:text-brand-700 dark:hover:text-brand-400">${esc(p.name)}</a></h3>
-    ${owner ? `<p class="min-w-0 truncate text-sm text-stone-500 dark:text-stone-400">${esc(owner)}</p>` : ""}
-    ${p.repo ? `<p class="ml-auto flex shrink-0 items-center gap-1 text-sm text-stone-600 tabular-nums dark:text-stone-300">${ICON_STAR}${num(p.stars)}</p>` : ""}
-  </div>
-  <p class="text-base/7 text-pretty text-stone-600 sm:text-sm/6 dark:text-stone-400">${esc(normalizeDescription(p.description))}</p>
-  <div class="mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-1">
-    <p class="font-mono text-xs text-stone-500 dark:text-stone-400">${meta}</p>
-    <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">${linkIcons(p)}</div>
-  </div>
-</li>`;
+  return `<tr data-name="${esc(p.name.toLowerCase())}" data-stars="${p.stars || 0}" data-added="${esc(p.added || "")}" data-text="${esc(text)}">
+  <td class="c-name"><a href="${esc(primaryUrl(p))}">${esc(p.name)}</a>${owner ? `<span class="owner">${esc(owner)}</span>` : ""}</td>
+  <td class="c-desc">${esc(normalizeDescription(p.description))}</td>
+  <td class="c-lang">${p.language ? esc(p.language) : '<span class="dim">—</span>'}</td>
+  <td class="c-stars">${p.repo ? `<span class="stars">★ ${num(p.stars)}</span>` : '<span class="dim">—</span>'}</td>
+  <td class="c-links">${linkIcons(p)}</td>
+</tr>`;
 };
 
 const sections = categories
-  .map((c) => {
+  .map((c, i) => {
     const items = byCategory[c.id];
-    if (!items.length) return "";
-    return `<section class="cat pt-12" id="${esc(slug(c.title))}" data-cat="${esc(c.id)}">
-  <div>
-    <h2 class="flex items-center gap-3 text-2xl font-semibold tracking-tight text-balance">${esc(c.title)} <span data-count class="rounded-full bg-brand-500/10 px-2 py-0.5 font-mono text-xs font-medium text-brand-700 tabular-nums dark:text-brand-300">${items.length}</span></h2>
-    <p class="mt-1 max-w-[56ch] text-base text-pretty text-stone-600 sm:text-sm/6 dark:text-stone-400">${esc(c.blurb)}</p>
-  </div>
-  <ul role="list" class="list mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
+    return `<section class="cat win" id="${esc(slug(c.title))}" data-cat="${esc(c.id)}">
+  <div class="win-bar"><span>${String(i + 1).padStart(2, "0")} · ${esc(c.title)}</span><span class="win-bar-r"><span data-count>${items.length}</span> entries</span></div>
+  <p class="blurb">${esc(c.blurb)}</p>
+  <table class="dir">
+    <thead><tr><th>Project</th><th>Description</th><th>Lang</th><th>Stars</th><th>Links</th></tr></thead>
+    <tbody>
 ${items.map(row).join("\n")}
-  </ul>
-  <p class="empty py-4 text-base text-stone-500 dark:text-stone-400" hidden>No matches in this section.</p>
+    </tbody>
+  </table>
+  <p class="empty mono" hidden>0 matches in this section.</p>
 </section>`;
   })
   .join("\n\n");
 
-const chipClass =
-  "chip shrink-0 rounded-full px-3 py-1.5 text-base font-medium text-stone-600 ring-1 ring-stone-950/10 hover:text-stone-950 aria-pressed:bg-brand-500/10 aria-pressed:text-brand-800 aria-pressed:ring-brand-500/40 sm:py-1 sm:text-sm/6 dark:text-stone-300 dark:ring-white/10 dark:hover:text-white dark:aria-pressed:text-brand-300";
-const chips = [`<button type="button" class="${chipClass}" data-filter="all" aria-pressed="true">All</button>`]
-  .concat(categories.filter((c) => byCategory[c.id].length).map((c) => `<button type="button" class="${chipClass}" data-filter="${esc(c.id)}" aria-pressed="false">${esc(c.short || c.title)}</button>`))
+const chips = [`<button class="chip is-active" data-filter="all" type="button">All</button>`]
+  .concat(categories.map((c) => `<button class="chip" data-filter="${esc(c.id)}" type="button">${esc(c.title)}</button>`))
+  .join("\n");
+
+const featuredPool = projects
+  // Projects built for Clef, not large general-purpose repos that added Clef support.
+  .filter((p) => p.repo && (p.created || "") >= "2026-09-25" && !["official", "lists", "articles"].includes(p.category))
+  .sort((a, b) => (b.stars || 0) - (a.stars || 0))
+  .slice(0, 4);
+const featured = featuredPool
+  .map(
+    (p) => `<a class="feat" href="${esc(primaryUrl(p))}">
+  <span class="feat-stars">★ ${num(p.stars)}</span>
+  <span class="feat-name">${esc(p.name)}</span>
+  <span class="feat-desc">${esc(normalizeDescription(p.description))}</span>
+  <span class="feat-owner">${esc(ownerOf(p) || "")}${p.language ? ` · ${esc(p.language)}` : ""}</span>
+</a>`
+  )
   .join("\n");
 
 const repoCount = projects.filter((p) => p.repo).length;
 const siteCount = projects.filter((p) => p.site).length;
-const starsTotal = projects.reduce((n, p) => n + (p.repo ? p.stars || 0 : 0), 0);
+// Count stars only for projects built since the Clef launch window, not large repos that added support.
+const starsTotal = projects.reduce((n, p) => n + (p.repo && (p.created || "") >= "2026-09-25" ? p.stars || 0 : 0), 0);
 
 const articleCount = projects.filter((p) => p.category === "articles").length;
 let sha = "local";
@@ -156,16 +159,16 @@ const html = template
   .replaceAll("{{UPDATED}}", esc(data.updated))
   .replaceAll("{{UPDATED_LONG}}", esc(updatedLong))
   .replaceAll("{{ARTICLE_COUNT}}", num(articleCount))
+  .replaceAll("{{FEATURED_COUNT}}", String(featuredPool.length))
   .replaceAll("{{BUILD_SHA}}", esc(sha))
   .replaceAll("{{REPO_URL}}", REPO_URL)
   .replaceAll("{{SUBMIT_URL}}", SUBMIT_URL)
   .replaceAll("{{BUILD_STRING}}", esc(`${sha} · ${data.updated} · ${projects.length} entries`))
+  .replace("{{FEATURED}}", featured)
   .replace("{{CHIPS}}", chips)
   .replace("{{SECTIONS}}", sections);
 
 writeFileSync(resolve(root, "site/index.html"), html);
-execSync("npx tailwindcss -i scripts/styles.css -o site/styles.css --minify", { cwd: root, stdio: ["ignore", "ignore", "inherit"] });
-
 // ---------- sitemap / robots ----------
 writeFileSync(
   resolve(root, "site/sitemap.xml"),

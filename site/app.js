@@ -12,28 +12,24 @@
     for (const section of sections) {
       const catOn = filter === "all" || section.dataset.cat === filter;
       let visible = 0;
-      for (const tr of section.querySelectorAll(".item")) {
+      for (const tr of section.querySelectorAll("tbody tr")) {
         const on = catOn && (!term || tr.dataset.text.includes(term));
         tr.hidden = !on;
         if (on) visible++;
       }
-      section.hidden = !catOn || (filter === "all" && term && visible === 0);
-      section.querySelector(".empty").hidden = !(catOn && visible === 0 && term && filter !== "all");
+      section.hidden = !catOn;
+      section.querySelector(".empty").hidden = !(catOn && visible === 0 && term);
       section.querySelector("[data-count]").textContent = visible;
       visibleTotal += visible;
     }
     noResults.hidden = visibleTotal > 0;
     const vc = document.getElementById("visible-count");
     if (vc) vc.textContent = `${visibleTotal} shown`;
-    const url = new URL(location.href);
-    term ? url.searchParams.set("q", term) : url.searchParams.delete("q");
-    filter !== "all" ? url.searchParams.set("cat", filter) : url.searchParams.delete("cat");
-    history.replaceState(null, "", url);
   };
 
   const resort = () => {
     const key = sort.value;
-    for (const tbody of document.querySelectorAll(".list")) {
+    for (const tbody of document.querySelectorAll(".dir tbody")) {
       const rows = [...tbody.children];
       rows.sort((a, b) => {
         if (key === "stars") return Number(b.dataset.stars) - Number(a.dataset.stars) || a.dataset.name.localeCompare(b.dataset.name);
@@ -49,7 +45,7 @@
   for (const chip of chips) {
     chip.addEventListener("click", () => {
       filter = chip.dataset.filter;
-      chips.forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
+      chips.forEach((c) => c.classList.toggle("is-active", c === chip));
       apply();
       if (filter !== "all") document.getElementById("controls").scrollIntoView({ block: "start" });
     });

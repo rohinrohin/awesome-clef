@@ -193,13 +193,14 @@ if (reportPath) {
     return `- [${r.full_name}](https://github.com/${r.full_name}) ★${r.stargazers_count} · ${r.language || "-"} · \`${categoryOf(c)}\` — ${description(r) || "_no description_"}  \n  evidence: ${[...c.evidence, clefNote(c)].filter(Boolean).join("; ")}`;
   };
   const yes = rows.filter(qualifies);
-  const maybe = rows.filter((c) => !qualifies(c));
+  // Weaker hits, best first: Clef's own score, then stars.
+  const maybe = rows.filter((c) => !qualifies(c)).sort((a, b) => (b.clef?.uses ?? 0) - (a.clef?.uses ?? 0) || b.repo.stargazers_count - a.repo.stargazers_count);
   writeFileSync(
     reportPath,
     `Nightly discovery for repos pushed since ${since}.\n\n` +
       `**Before merging:** open each repo and confirm it really uses Clef. Fix the category or description in \`data/projects.json\` if needed, and move false positives to \`data/exclude.json\`.\n\n` +
       `### Added in this PR (${yes.length})\n\n${yes.map(md).join("\n") || "_none_"}\n\n` +
-      `### Needs a manual look, not added (${maybe.length})\n\nCode hits in larger repos, thin descriptions, or tiny repos. Add by hand if they genuinely support Clef.\n\n${maybe.map(md).join("\n") || "_none_"}\n`
+      `### Needs a manual look, not added (${maybe.length})\n\nCode hits in larger repos, thin descriptions, or tiny repos. Add by hand if they genuinely support Clef.\n\n${maybe.slice(0, 50).map(md).join("\n") || "_none_"}${maybe.length > 50 ? `\n\n…and ${maybe.length - 50} more; run \`npm run discover\` locally for the full list.` : ""}\n`
   );
 }
 

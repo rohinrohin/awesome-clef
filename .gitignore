@@ -10,4 +10,3 @@ site/robots.txt
 .env*
 !.env.example
 .claude/
-site/styles.css
