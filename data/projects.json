@@ -197,7 +197,7 @@
       "description": "Rust agent loop with a decision module and a Workers integration, including a Clef worker example.",
       "category": "sdks",
       "language": "Rust",
-      "stars": 335,
+      "stars": 337,
       "added": "2026-10-08",
       "created": "2026-02-16",
       "pushed": "2026-10-07"
@@ -493,7 +493,7 @@
     {
       "name": "awesome-x",
       "repo": "RadRebelSam/awesome-x",
-      "site": null,
+      "site": "https://awesomex.radrebeldeveloper.com",
       "description": "Awesome lists that maintain themselves. Crawls GitHub and npm, has a decision model (Cloudflare Clef or Jev) judge each candidate against one sentence you write, then publishes the README and site. No dependencies.",
       "category": "apps",
       "language": "JavaScript",
@@ -749,7 +749,7 @@
       "description": "Local UI and library to run and train LLMs; includes Clef model support and a Clef training benchmark script.",
       "category": "finetuning",
       "language": "Python",
-      "stars": 77346,
+      "stars": 77348,
       "added": "2026-10-08",
       "created": "2023-11-29",
       "pushed": "2026-10-07"
@@ -809,7 +809,7 @@
       "description": "Run open models locally; includes Clef model support in its runners.",
       "category": "selfhost",
       "language": "Go",
-      "stars": 182483,
+      "stars": 182486,
       "added": "2026-10-08",
       "created": "2023-06-26",
       "pushed": "2026-10-07"
@@ -889,7 +889,7 @@
     {
       "name": "open-jevlike-infer",
       "repo": "Arcobalneo/open-jevlike-infer",
-      "site": null,
+      "site": "https://huggingface.co/Cloudflare/clef-flash",
       "description": "Production inference server for open Jev-like decision models (Jev/SystemOne /v1/systemone). Clef-Flash on vLLM: 45 ms p50, 2x throughput, verified against the reference.",
       "category": "selfhost",
       "language": "Python",
@@ -973,7 +973,7 @@
     {
       "name": "clef-flash-snap",
       "repo": "canonical/clef-flash-snap",
-      "site": null,
+      "site": "https://snapcraft.io/clef-flash",
       "description": "Snap package for local inference with Clef-flash.",
       "category": "selfhost",
       "language": "Makefile",
