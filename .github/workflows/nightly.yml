@@ -1,0 +1,88 @@
+name: Nightly
+
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+env:
+  # Deploy steps are skipped until the CLOUDFLARE_API_TOKEN secret exists.
+  HAS_CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+
+jobs:
+  refresh:
+    # Stars, languages, renames and removed repos. Safe to commit straight to main.
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Refresh stars, renames, and removed repos
+        run: npm run refresh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run validate
+      - name: Commit data changes
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/projects.json
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "chore: nightly refresh"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Build
+        run: npm run build
+      - name: Commit README
+        if: steps.commit.outputs.changed == 'true'
+        run: |
+          git add README.md
+          git diff --cached --quiet || git commit -m "chore: rebuild README"
+          git pull --rebase origin main
+          git push
+      - name: Deploy
+        if: steps.commit.outputs.changed == 'true' && env.HAS_CF_TOKEN == 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: deploy
+
+  discover:
+    # New Clef projects are proposed as a pull request, never published directly.
+    needs: refresh
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Discover candidates
+        run: npm run discover -- --add --days=7 --report=/tmp/discovery.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run validate
+      - name: Open review PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: discovery/nightly
+          delete-branch: true
+          add-paths: data/projects.json
+          commit-message: "data: add discovered Clef projects"
+          title: "Discovery: new Clef projects to review"
+          body-path: /tmp/discovery.md
+          labels: discovery

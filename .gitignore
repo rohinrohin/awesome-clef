@@ -1,0 +1,12 @@
+node_modules/
+.wrangler/
+.DS_Store
+site/index.html
+site/sitemap.xml
+site/robots.txt
+
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+.claude/

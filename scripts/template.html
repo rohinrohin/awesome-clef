@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Awesome Clef: Cloudflare Clef projects, SDKs, demos and resources</title>
+<meta name="description" content="Community directory of {{PROJECT_COUNT}} projects built with Cloudflare Clef: SDKs, agents, apps, demos, benchmarks, fine-tuning and self-hosting resources. Refreshed daily.">
+<link rel="canonical" href="https://awesomeclef.com/">
+<meta name="theme-color" content="#f6821f">
+<meta property="og:site_name" content="Awesome Clef">
+<meta property="og:title" content="Awesome Clef: the Cloudflare Clef community directory">
+<meta property="og:description" content="{{PROJECT_COUNT}} projects, tools, SDKs, demos and resources built with Cloudflare Clef. Community-maintained.">
+<meta property="og:url" content="https://awesomeclef.com/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://awesomeclef.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Awesome Clef">
+<meta name="twitter:description" content="{{PROJECT_COUNT}} projects, tools, SDKs, demos and resources built with Cloudflare Clef.">
+<meta name="twitter:image" content="https://awesomeclef.com/assets/og.png">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v={{BUILD_SHA}}">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Awesome Clef","url":"https://awesomeclef.com/","description":"Community directory of projects, tools, SDKs, demos and resources built with Cloudflare Clef."}</script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <nav class="nav wrap">
+    <a class="brand" href="/"><img src="/assets/favicon.svg" alt="" width="26" height="26">Awesome Clef</a>
+    <div class="nav-links">
+      <a href="#directory">Directory</a>
+      <a href="https://developers.cloudflare.com/workers-ai/models/clef/">Clef docs</a>
+      <a href="{{REPO_URL}}">GitHub</a>
+    </div>
+  </nav>
+
+  <div class="hero-body wrap">
+    <p class="kicker"><span class="pill">Community-maintained</span> Not affiliated with Cloudflare</p>
+    <h1>Awesome <span class="grad">Clef</span></h1>
+    <p class="sub">The community directory of projects, tools, SDKs, experiments and resources built with Cloudflare Clef.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#directory">Browse {{PROJECT_COUNT}} projects</a>
+      <a class="btn" href="{{SUBMIT_URL}}">Add a project</a>
+    </div>
+    <p class="stats mono">{{PROJECT_COUNT}} entries · {{REPO_COUNT}} GitHub repos · refreshed {{UPDATED_LONG}}</p>
+  </div>
+
+  <div class="facts wrap">
+    <div class="card">
+      <h2 class="card-title">Clef at a glance</h2>
+      <dl class="kv">
+        <div><dt>Models</dt><dd><code>@cf/cloudflare/clef</code> (27B) · <code>@cf/cloudflare/clef-flash</code> (9B)</dd></div>
+        <div><dt>What it does</dt><dd>Takes a state plus typed questions (<code>noul</code>, <code>choice</code>, <code>score</code>) and returns a probability for every allowed answer. No text generation.</dd></div>
+        <div><dt>Input</dt><dd>Text, JSON, images or video · 65,536-token context</dd></div>
+        <div><dt>Pricing</dt><dd>$0.24 (Clef) · $0.09 (Clef-flash) per M input tokens on Workers AI</dd></div>
+        <div><dt>Weights</dt><dd>Open, Apache 2.0, on <a href="https://huggingface.co/Cloudflare/clef">Hugging Face</a></dd></div>
+        <div><dt>API</dt><dd>Jev / System One compatible request and response shape</dd></div>
+      </dl>
+      <p class="fine">Per Cloudflare's <a href="https://developers.cloudflare.com/workers-ai/models/clef/">model page</a> and <a href="https://blog.cloudflare.com/clef-decision-models/">launch post</a>, Oct 1, 2026.</p>
+    </div>
+    <div class="card code-card">
+      <h2 class="card-title">Workers AI <span class="mono dim">worker.ts</span></h2>
+<pre class="code"><code><span class="c-k">const</span> res = <span class="c-k">await</span> env.AI.<span class="c-f">run</span>(<span class="c-s">"@cf/cloudflare/clef-flash"</span>, {
+  model: <span class="c-s">"clef-flash"</span>,
+  state: <span class="c-s">"Checkout has been failing for every customer."</span>,
+  questions: {
+    urgent: { type: <span class="c-s">"noul"</span>,
+      instructions: <span class="c-s">"Is this support request urgent?"</span> },
+    team: { type: <span class="c-s">"choice"</span>,
+      instructions: <span class="c-s">"Which team should handle it?"</span>,
+      criteria: {
+        billing: <span class="c-s">"Payments and refunds"</span>,
+        technical: <span class="c-s">"Outages and errors"</span>,
+      } },
+  },
+});
+<span class="c-c">// res.answers.team -> choice + per-option probabilities</span></code></pre>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="directory">
+  <div class="controls" id="controls">
+    <label class="search">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input id="q" type="search" placeholder="Search projects, owners, languages…" autocomplete="off" spellcheck="false" aria-label="Search projects">
+      <span class="count mono" id="visible-count">{{PROJECT_COUNT}} shown</span>
+    </label>
+    <div class="controls-row">
+      <div class="chips" role="group" aria-label="Filter by category">
+{{CHIPS}}
+      </div>
+      <label class="sort"><span>Sort</span>
+        <select id="sort" aria-label="Sort projects">
+          <option value="stars">Stars</option>
+          <option value="added">Newest</option>
+          <option value="name">Name</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <div class="directory">
+{{SECTIONS}}
+    <p class="no-results" id="no-results" hidden>No matches. Know a project that fits? <a href="{{SUBMIT_URL}}">Add it</a>.</p>
+  </div>
+
+  <section class="missing">
+    <div>
+      <h2>Missing something?</h2>
+      <p>Add one object to <code>data/projects.json</code> and open a pull request, or file an issue with the link. New Clef repos are also discovered nightly and reviewed before they're listed.</p>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="{{SUBMIT_URL}}">Submit a project</a>
+      <a class="btn" href="{{REPO_URL}}/blob/main/CONTRIBUTING.md">Contributing guide</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p><strong>Awesome Clef</strong> is community-maintained and not affiliated with, endorsed by, or sponsored by Cloudflare, Inc. Cloudflare and Clef are trademarks of their respective owners.</p>
+    <p>Data is CC0 · <a href="{{REPO_URL}}">Source on GitHub</a> · Forked from <a href="https://github.com/hellogumbo/awesome-jev">awesome-jev</a> · <span class="mono">{{BUILD_STRING}}</span></p>
+  </div>
+</footer>
+
+<script src="/app.js?v={{BUILD_SHA}}" defer></script>
+</body>
+</html>

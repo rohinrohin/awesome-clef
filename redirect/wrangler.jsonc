@@ -1,0 +1,10 @@
+// 301s www.awesomeclef.com/* to the canonical https://awesomeclef.com/*.
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "awesomeclef-www",
+  "account_id": "cec5612170f2a2fbb96741bcaa29c36f",
+  "main": "index.js",
+  "compatibility_date": "2026-10-06",
+  "workers_dev": false,
+  "routes": [{ "pattern": "www.awesomeclef.com", "custom_domain": true }]
+}

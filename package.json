@@ -1,0 +1,25 @@
+{
+  "name": "awesome-clef",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A curated directory of projects, tools, SDKs, demos and resources built with Cloudflare Clef.",
+  "homepage": "https://awesomeclef.com",
+  "repository": "github:rohinrohin/awesome-clef",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build": "node scripts/build.mjs",
+    "refresh": "node scripts/refresh.mjs",
+    "discover": "node scripts/discover.mjs",
+    "dev": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "deploy:redirect": "wrangler deploy --config redirect/wrangler.jsonc"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "wrangler": "^4.148.0"
+  }
+}
