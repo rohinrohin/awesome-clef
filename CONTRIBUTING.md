@@ -47,13 +47,16 @@ A project qualifies if it has at least one of:
 
 Not listed: projects that only mention Cloudflare, projects that only support Jev and "should work" with Clef, generic AI directories, SEO pages, empty or placeholder repos, and duplicates. Clef is Jev / System One API compatible, but compatibility alone is not enough; we want evidence the project was used or tested with Clef.
 
+Listing is not endorsement. We check that a project really involves Clef; we do not audit code quality, security, licenses, or published numbers. Pull requests that remove dead, misleading, or empty entries are as welcome as additions.
+
 ## How discovery works
 
 A nightly GitHub Action:
 
 1. **Refreshes** stars, languages, homepages, and renames for every listed repo, rebuilds, and deploys.
 2. **Discovers** new repos (`scripts/discover.mjs`) via GitHub repository search (Clef-specific phrases in names, descriptions, and topics) and code search (`@cf/cloudflare/clef`, `@cf/cloudflare/clef-flash`, `Cloudflare/clef`, `Cloudflare/clef-flash`).
-3. **Opens a pull request** with the candidates that pass the bar, plus a list of weaker hits for a manual look. Nothing is published until a maintainer merges it.
+3. **Asks Clef** (optional). When the `CLOUDFLARE_API_TOKEN` secret has Workers AI access, Clef-flash reads each candidate's README and answers two typed questions: does this repo really use Clef (`noul`), and which category fits (`choice`). Candidates Clef scores below 0.5 are not proposed.
+4. **Opens a pull request** with the candidates that pass the bar, plus a list of weaker hits for a manual look. Nothing is published until a maintainer merges it.
 
 "clef" is also a music term, so repository hits need Cloudflare / decision-model context next to the word. False positives go in `data/exclude.json` so they never come back.
 

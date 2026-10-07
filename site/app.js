@@ -49,7 +49,7 @@
   for (const chip of chips) {
     chip.addEventListener("click", () => {
       filter = chip.dataset.filter;
-      chips.forEach((c) => c.classList.toggle("is-active", c === chip));
+      chips.forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
       apply();
       if (filter !== "all") document.getElementById("controls").scrollIntoView({ block: "start" });
     });

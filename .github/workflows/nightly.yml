@@ -24,6 +24,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+      - run: npm ci
       - name: Refresh stars, renames, and removed repos
         run: npm run refresh
         env:
@@ -71,10 +73,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+      - run: npm ci
       - name: Discover candidates
         run: npm run discover -- --add --days=7 --report=/tmp/discovery.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Optional: Clef-flash judges each candidate. Needs Workers AI access on the token.
+          CLOUDFLARE_ACCOUNT_ID: cec5612170f2a2fbb96741bcaa29c36f
+          CLOUDFLARE_AI_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       - run: npm run validate
       - name: Open review PR
         uses: peter-evans/create-pull-request@v7

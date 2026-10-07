@@ -61,8 +61,9 @@ for (const q of repoQueries) {
     }
     const body = await res.json();
     for (const r of body.items || []) {
-      const text = `${r.full_name} ${r.description || ""} ${(r.topics || []).join(" ")}`;
-      if (RELEVANT.test(text)) note(r, "description");
+      // Name/description must say Clef; topics alone are too easy to stuff.
+      if (RELEVANT.test(`${r.full_name} ${r.description || ""}`)) note(r, "description");
+      else if (RELEVANT.test(`${r.full_name} ${r.description || ""} ${(r.topics || []).join(" ")}`)) note(r, "topics");
     }
     if ((body.items || []).length < 100) break;
     await sleep(2500);
@@ -102,11 +103,63 @@ if (token) {
 }
 
 const description = (r) => (r.description || "").trim().replace(/\s+/g, " ");
+
+// Optional: ask Clef itself (Clef-flash on Workers AI) whether each candidate really uses Clef,
+// and which category fits. Needs CLOUDFLARE_ACCOUNT_ID and a token with Workers AI access.
+const cfAccount = process.env.CLOUDFLARE_ACCOUNT_ID;
+const cfToken = process.env.CLOUDFLARE_AI_TOKEN || process.env.CLOUDFLARE_API_TOKEN;
+const readme = async (name) => {
+  const res = await fetch(`https://api.github.com/repos/${name}/readme`, { headers: { ...headers, Accept: "application/vnd.github.raw" } });
+  return res.ok ? (await res.text()).slice(0, 4000) : "";
+};
+const judge = async (r) => {
+  const res = await fetch(`https://api.cloudflare.com/client/v4/accounts/${cfAccount}/ai/run/@cf/cloudflare/clef-flash`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${cfToken}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: "clef-flash",
+      state: { repository: r.full_name, description: r.description || "", topics: r.topics || [], readme: await readme(r.full_name) },
+      questions: {
+        uses_clef: {
+          type: "noul",
+          instructions:
+            "Does this repository itself use Cloudflare's Clef or Clef-flash decision model (calling @cf/cloudflare/clef on Workers AI, running the Clef weights, or supporting Clef as a named backend)? Merely mentioning Cloudflare, Jev, or decision models in general is not enough.",
+        },
+        category: {
+          type: "choice",
+          instructions: "Which directory category fits this project best?",
+          criteria: Object.fromEntries(data.categories.filter((c) => c.id !== "official").map((c) => [c.id, c.blurb])),
+        },
+      },
+    }),
+  });
+  if (!res.ok) throw new Error(`Workers AI ${res.status}`);
+  const { result } = await res.json();
+  return { uses: result.answers.uses_clef.noul, category: result.answers.category.choice, confidence: result.answers.category.confidence };
+};
+if (cfAccount && cfToken) {
+  let failed = 0;
+  for (const c of found.values()) {
+    try {
+      c.clef = await judge(c.repo);
+    } catch (e) {
+      if (++failed === 3) console.warn(`Clef judge disabled after errors: ${e.message}`);
+      if (failed >= 3) break;
+    }
+  }
+} else {
+  console.warn("CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_AI_TOKEN not set: skipping the Clef relevance check.");
+}
+const categoryOf = (c) => (c.clef && c.clef.confidence >= 0.5 ? c.clef.category : categorize(c.repo));
+const clefNote = (c) => (c.clef ? `clef: uses ${c.clef.uses.toFixed(2)}, suggests ${c.clef.category} (${c.clef.confidence.toFixed(2)})` : null);
+
 // Inclusion bar for automatic proposals. Everything still goes through PR review.
 // - the description itself must say it is about Clef (not just a code hit in a big repo)
 // - a real description and a non-trivial repo (size is in KB)
-const qualifies = ({ repo: r, evidence }) => {
-  if (!evidence.has("description")) return false;
+// - when Clef judged it, Clef must agree it really uses Clef
+const qualifies = ({ repo: r, evidence, clef }) => {
+  if (clef && clef.uses < 0.5) return false;
+  if (!evidence.has("description") && !(clef && clef.uses >= 0.85)) return false;
   if (description(r).length < 20) return false;
   if (r.size < 20) return false;
   if (categorize(r) === "lists") return r.stargazers_count >= 5;
@@ -127,7 +180,7 @@ const uniqueName = (r) => {
 const rows = [...found.values()].sort((a, b) => b.repo.stargazers_count - a.repo.stargazers_count);
 const line = (c) => {
   const r = c.repo;
-  return `${qualifies(c) ? "+" : " "}${String(r.stargazers_count).padStart(6)}  ${r.full_name.padEnd(45)} ${(r.language || "-").padEnd(12)} ${categorize(r)}\n         ${description(r) || "(no description)"}\n         evidence: ${[...c.evidence].join("; ")}${site(r) ? `\n         ${site(r)}` : ""}`;
+  return `${qualifies(c) ? "+" : " "}${String(r.stargazers_count).padStart(6)}  ${r.full_name.padEnd(45)} ${(r.language || "-").padEnd(12)} ${categoryOf(c)}\n         ${description(r) || "(no description)"}\n         evidence: ${[...c.evidence, clefNote(c)].filter(Boolean).join("; ")}${site(r) ? `\n         ${site(r)}` : ""}`;
 };
 
 console.log(`${rows.length} candidates pushed since ${since} not yet listed:\n`);
@@ -137,7 +190,7 @@ console.log(`\n${rows.filter(qualifies).length} pass the bar (+).`);
 if (reportPath) {
   const md = (c) => {
     const r = c.repo;
-    return `- [${r.full_name}](https://github.com/${r.full_name}) ★${r.stargazers_count} · ${r.language || "-"} · \`${categorize(r)}\` — ${description(r) || "_no description_"}  \n  evidence: ${[...c.evidence].join("; ")}`;
+    return `- [${r.full_name}](https://github.com/${r.full_name}) ★${r.stargazers_count} · ${r.language || "-"} · \`${categoryOf(c)}\` — ${description(r) || "_no description_"}  \n  evidence: ${[...c.evidence, clefNote(c)].filter(Boolean).join("; ")}`;
   };
   const yes = rows.filter(qualifies);
   const maybe = rows.filter((c) => !qualifies(c));
@@ -161,7 +214,7 @@ for (const c of rows) {
     repo: r.full_name,
     site: site(r),
     description: description(r),
-    category: categorize(r),
+    category: categoryOf(c),
     language: r.language || null,
     stars: r.stargazers_count,
     added: today,
