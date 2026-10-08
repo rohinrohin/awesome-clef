@@ -8,7 +8,7 @@ Clef and Clef-flash are Cloudflare's open-weight decision models. They take a st
 
 Community-maintained. Not affiliated with Cloudflare. A listing means a project meets the [inclusion rules](CONTRIBUTING.md#what-gets-listed), not that it has been reviewed for quality or security; read the code before you depend on it. To add a project, open a pull request or [file an issue](https://github.com/rohinrohin/awesome-clef/issues/new?template=submit-project.yml). See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-110 entries · last refreshed 2026-10-07
+110 entries · last refreshed 2026-10-08
 
 ## Contents
 
@@ -170,7 +170,7 @@ Run the open Clef weights on your own hardware.
 - [clef-flash-snap](https://github.com/canonical/clef-flash-snap) ([site](https://snapcraft.io/clef-flash)) - Snap package for local inference with Clef-flash.
 - [clef-flash-vllm-fp8](https://github.com/cryguy/clef-flash-vllm-fp8) - Cloudflare Clef-Flash on vLLM on one 24 GB GPU: a /v1/systemone server with an FP8 recipe that keeps its Decision Index score.
 - [clef-hrx](https://github.com/zacharydenton/clef-hrx) - Local Cloudflare CLEF inference on AMD Strix Halo, written in Rust and Loom.
-- [clef-lcv](https://github.com/BlueFinLab-ai/clef-lcv) - Self-hosted portal and API for Cloudflare's Clef decision models on a single NVIDIA GPU.
+- [clef-lcv](https://github.com/BlueFinLab-ai/clef-lcv) ([site](https://bluefinlab.ai)) - Self-hosted portal and API for Cloudflare's Clef decision models on a single NVIDIA GPU.
 - [jevjam](https://github.com/beremaran/jevjam) - Self-hosted MCP server and Jev-compatible HTTP API for small decision models (Laya, Julia-1, clef-flash) on one GPU, in Docker.
 - [rverdict](https://github.com/sepatel/rverdict) - A native Rust decision engine in the "System One" family (Jev, Strands Decider, Von, Laya, Clef).
 
