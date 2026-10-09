@@ -8,7 +8,7 @@ Clef and Clef-flash are Cloudflare's open-weight decision models. They take a st
 
 Community-maintained. Not affiliated with Cloudflare. A listing means a project meets the [inclusion rules](CONTRIBUTING.md#what-gets-listed), not that it has been reviewed for quality or security; read the code before you depend on it. To add a project, open a pull request or [file an issue](https://github.com/rohinrohin/awesome-clef/issues/new?template=submit-project.yml). See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-110 entries · last refreshed 2026-10-08
+109 entries · last refreshed 2026-10-09
 
 ## Contents
 
@@ -100,7 +100,6 @@ Products, services, and pipelines that call Clef.
 - [cloudflare-compliance-reviewer](https://github.com/Clawbuilders/cloudflare-compliance-reviewer) - ClawBuilders S1:E6: a policy-as-code agent committee for GitHub PRs on Cloudflare (Agents SDK, Workflows, R2, Workers AI + Clef, Regorus).
 - [compliance-preview-auditor](https://github.com/Clawbuilders/compliance-preview-auditor) - ClawBuilders S1:E6 bonus: audit a live preview URL with Cloudflare Browser Rendering — axe-core, third parties before consent, and Clef vision.
 - [er-decision-support](https://github.com/zalomea/er-decision-support) - CPU-only research prototype for emergency-department triage support, pairing a small web UI and typed API with a local Clef-flash GGUF model.
-- [LegalClefs](https://github.com/omaxito/LegalClefs) - Legal Clefs turns immigration case files into targeted research across French administrative case law. It combines an LLM for legal issue decomposition with Cloudflare’s Clef decision model to classify court decisions at scale and surface arguments, counterarguments, and matching precedents.
 - [quant-decision-engine](https://github.com/zinxer/quant-decision-engine) - Regex reads words, decision models read meaning: a Go reference implementation that gates crypto news signals with Cloudflare's open-weight Clef-flash decision model.
 - [sim4options](https://github.com/jstdlee/sim4options) - Options Quest: learn options trading one decision at a time, with Kon the fox. Vue + Cloudflare Workers, D1, Workers AI (Clef).
 
