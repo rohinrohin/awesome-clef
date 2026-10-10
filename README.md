@@ -8,7 +8,7 @@ Clef and Clef-flash are Cloudflare's open-weight decision models. They take a st
 
 Community-maintained. Not affiliated with Cloudflare. A listing means a project meets the [inclusion rules](CONTRIBUTING.md#what-gets-listed), not that it has been reviewed for quality or security; read the code before you depend on it. To add a project, open a pull request or [file an issue](https://github.com/rohinrohin/awesome-clef/issues/new?template=submit-project.yml). See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-109 entries · last refreshed 2026-10-09
+109 entries · last refreshed 2026-10-10
 
 ## Contents
 
@@ -59,9 +59,9 @@ Routers, gates, MCP servers, and skills that put Clef inside coding agents and a
 - [ClefMCP](https://github.com/HighlyLoadedEgo/ClefMCP) ([site](https://www.npmjs.com/package/clef-mcp)) - Local MCP server exposing the Cloudflare Clef-Flash decision model to AI agents — structured decisions with probability outputs, fully offline via llama.cpp.
 - [pi-model-router](https://github.com/alexei-led/pi-model-router) - Pi extension for four-tier model routing with budget controls and fallbacks; can use Cloudflare Clef as a routing advisor.
 - [clef-router](https://github.com/Gjusev/clef-router) ([site](https://pypi.org/project/clef-router/)) - Route prompts between cheap and frontier LLMs with Cloudflare's Clef decision model. OpenAI-compatible proxy + library.
+- [building-with-decision-models](https://github.com/aaddrick/building-with-decision-models) - Unofficial skill for building with decision models (Jev, Clef, pplx-decider, ai_decide, Ollama): typed decisions, calibrated confidence, provider differences, and prior art sorted by implementation shape.
 - [clef-model-router](https://github.com/AbelNavarro/clef-model-router) - Claude Code mod that uses Cloudflare Clef to automatically select the model and reasoning effort for each turn.
 - [odds](https://github.com/acoyfellow/odds) ([site](https://odds.coey.dev)) - Ask for odds, not prose. Clef decision models in Pi codemode through your own authenticated AI Gateway.
-- [building-with-decision-models](https://github.com/aaddrick/building-with-decision-models) - Unofficial skill for building with decision models (Jev, Clef, pplx-decider, ai_decide, Ollama): typed decisions, calibrated confidence, provider differences, and prior art sorted by implementation shape.
 - [clef-gate](https://github.com/dwain-barnes/clef-gate) - Claude Code mod: asks a local Clef decision model whether a tool call or subagent is needed before paying for it.
 - [clef-model-router (dwain-barnes)](https://github.com/dwain-barnes/clef-model-router) - Claude Code mod that routes each turn to the cheapest sufficient model with Clef; fork adding a fully local backend (llama-server, Ollama).
 - [clef-screen-triage](https://github.com/sakamoto-sann/clef-screen-triage) - Codex skill that hands screen-state checks to Clef-flash, with a Japanese guide and evaluation notes.
@@ -80,7 +80,7 @@ Routers, gates, MCP servers, and skills that put Clef inside coding agents and a
 
 Browser, desktop, and mobile automation with Clef choosing the action.
 
-- [clef-browser](https://github.com/zachsents/clef-browser) - Drive your own logged-in Chrome with Cloudflare's Clef decision model — CLI + MCP server + Chrome extension bridge.
+- [clef-browser](https://github.com/zachsents/agent-quick-browse) - Drive your own logged-in Chrome with Cloudflare's Clef decision model — CLI + MCP server + Chrome extension bridge.
 - [multi-modal-jev-browser](https://github.com/foklepoint/multi-modal-jev-browser) - A browser agent where a small decision model (Jev, Clef) picks each action and a vision LLM steps in only when it is unsure. CLI, library and MCP server.
 - [veil](https://github.com/force416/veil) - Chrome extension that hides X / Twitter replies matching a natural-language condition, judged by Cloudflare Clef.
 
@@ -109,6 +109,7 @@ Playgrounds, games, and small experiments you can run.
 
 - [clef-webcam](https://github.com/lucataco/clef-webcam) - Run Cloudflare's clef-flash decision model locally on your webcam.
 - [Clef Pictionary](https://github.com/jillesme/clef-pictionary) ([site](https://clef.jilles.fyi), [post](https://x.com/Jilles/status/2107572830225199403)) - Pictionary where Clef-flash on Workers AI guesses your drawing live, with per-word probabilities and an art critic score.
+- [clefcam](https://github.com/tmchow/clefcam) - A camera that follows your rules, powered by Cloudflare Clef Flash.
 - [blind-earth-clef-jev](https://github.com/dylanler/blind-earth-clef-jev) - Blind-Earth land/water maps with Cloudflare Clef / Clef-flash and TypeSafe Jev (System One choice).
 - [bot-club](https://github.com/jackdnl/bot-club) - A playful AI nightclub. Cloudflare Clef-flash decides who gets in, live.
 - [clef-airy](https://github.com/ajdunn2/clef-airy) - Mac/Win Electron app for testing Jev, System One, and similar decision APIs inc. local models like Clef with Ollama. Build requests using forms or JSON and explore structured responses. Made with NativePHP.
@@ -116,7 +117,6 @@ Playgrounds, games, and small experiments you can run.
 - [clef-playground](https://github.com/szerintedmi/clef-playground) - Local playground for Cloudflare's Clef decision models (clef / clef-flash): edit state, images and questions; see probabilities, latency and cost.
 - [clef-playground (JordanDalton)](https://github.com/JordanDalton/clef-playground) - Playground for Cloudflare's Clef decision models: typed questions, images, latency and cost.
 - [clef-playground (sw30labs)](https://github.com/sw30labs/clef-playground) - Run Cloudflare Clef locally on Apple Silicon with an MLX playground, typed decisions, and a SystemOne-compatible API.
-- [clefcam](https://github.com/tmchow/clefcam) - A camera that follows your rules, powered by Cloudflare Clef Flash.
 - [heist](https://github.com/acoyfellow/heist) ([site](https://heist.coey.dev)) - A prompt injection game: get VaultBot, Meta's Llama 3.3 70B on Workers AI, to leak a vault code while Cloudflare Clef scores your message below 0.5.
 - [ours-privacy-demo](https://github.com/jhomra21/ours-privacy-demo) - Synthetic healthcare consent regression demo with browser evidence and optional Cloudflare Clef assessments.
 
