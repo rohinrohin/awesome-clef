@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26",
+  "updated": "2026-10-27",
   "categories": [
     {
       "id": "official",
@@ -188,7 +188,7 @@
       "stars": 157,
       "added": "2026-10-08",
       "created": "2025-05-31",
-      "pushed": "2026-10-26"
+      "pushed": "2026-10-27"
     },
     {
       "name": "yoagent",
@@ -510,7 +510,7 @@
       "description": "Web search with decision models for source selection, query understanding, and relevance ranking; supports choosing Clef as the model.",
       "category": "apps",
       "language": "TypeScript",
-      "stars": 546,
+      "stars": 545,
       "added": "2026-10-08",
       "created": "2026-09-17",
       "pushed": "2026-10-21"
@@ -750,10 +750,10 @@
       "description": "Local UI and library to run and train LLMs; includes Clef model support and a Clef training benchmark script.",
       "category": "finetuning",
       "language": "Python",
-      "stars": 78581,
+      "stars": 78616,
       "added": "2026-10-08",
       "created": "2023-11-29",
-      "pushed": "2026-10-26"
+      "pushed": "2026-10-27"
     },
     {
       "name": "clef-finetune",
@@ -810,10 +810,10 @@
       "description": "Run open models locally; includes Clef model support in its runners.",
       "category": "selfhost",
       "language": "Go",
-      "stars": 184828,
+      "stars": 184956,
       "added": "2026-10-08",
       "created": "2023-06-26",
-      "pushed": "2026-10-26"
+      "pushed": "2026-10-27"
     },
     {
       "name": "vllm-jev",
@@ -822,7 +822,7 @@
       "description": "Native vLLM serving for Jev-style decision models, with Clef support and export.",
       "category": "selfhost",
       "language": "Python",
-      "stars": 760,
+      "stars": 775,
       "added": "2026-10-08",
       "created": "2026-09-24",
       "pushed": "2026-10-22"
@@ -846,10 +846,10 @@
       "description": "OpenAI-compatible inference server for Apple Silicon built on MLX, with System One support for the Clef family.",
       "category": "selfhost",
       "language": "Python",
-      "stars": 4034,
+      "stars": 4040,
       "added": "2026-10-08",
       "created": "2026-02-25",
-      "pushed": "2026-10-26"
+      "pushed": "2026-10-27"
     },
     {
       "name": "convert",
@@ -858,7 +858,7 @@
       "description": "Scripts to convert models to GGUF, with recipes for Clef and Clef-flash.",
       "category": "selfhost",
       "language": "Shell",
-      "stars": 57,
+      "stars": 58,
       "added": "2026-10-08",
       "created": "2026-07-08",
       "pushed": "2026-10-25"
@@ -873,7 +873,7 @@
       "stars": 465,
       "added": "2026-10-08",
       "created": "2026-06-10",
-      "pushed": "2026-10-25"
+      "pushed": "2026-10-27"
     },
     {
       "name": "cleffa",
@@ -982,7 +982,7 @@
       "stars": 0,
       "added": "2026-10-08",
       "created": "2026-10-07",
-      "pushed": "2026-10-23"
+      "pushed": "2026-10-27"
     },
     {
       "name": "awesome-decision-models",
@@ -991,7 +991,7 @@
       "description": "A curated list of decision models (System One / typed decision models): hosted APIs, open-weight models, runtimes, SDKs, applications, benchmarks, and papers.",
       "category": "lists",
       "language": "Python",
-      "stars": 665,
+      "stars": 667,
       "added": "2026-10-08",
       "created": "2026-09-17",
       "pushed": "2026-10-26"
@@ -1075,7 +1075,7 @@
       "description": "Pictionary where Clef-flash on Workers AI guesses your drawing live, with per-word probabilities and an art critic score.",
       "category": "demos",
       "language": "TypeScript",
-      "stars": 3,
+      "stars": 4,
       "added": "2026-10-07",
       "created": "2026-10-06",
       "pushed": "2026-10-06",
@@ -1244,7 +1244,7 @@
       "description": "Unofficial skill for building with decision models (Jev, Clef, pplx-decider, ai_decide, Ollama): typed decisions, calibrated confidence, provider differences, and prior art sorted by implementation shape.",
       "category": "agents",
       "language": "Python",
-      "stars": 4,
+      "stars": 5,
       "added": "2026-10-07",
       "created": "2026-10-07",
       "pushed": "2026-10-10"
@@ -1367,7 +1367,7 @@
       "stars": 175,
       "added": "2026-10-08",
       "created": "2025-12-18",
-      "pushed": "2026-10-26"
+      "pushed": "2026-10-27"
     },
     {
       "name": "clef-model-router (dwain-barnes)",
