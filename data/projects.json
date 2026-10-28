@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "categories": [
     {
       "id": "official",
@@ -163,7 +163,7 @@
       "stars": 44,
       "added": "2026-10-08",
       "created": "2025-04-07",
-      "pushed": "2026-10-22",
+      "pushed": "2026-10-28",
       "order": 8
     },
     {
@@ -209,7 +209,7 @@
       "description": "Desktop LLM gateway that aggregates provider quotas for Claude Code and similar tools; ships a Cloudflare Clef provider.",
       "category": "sdks",
       "language": "Rust",
-      "stars": 286,
+      "stars": 287,
       "added": "2026-10-08",
       "created": "2026-04-24",
       "pushed": "2026-10-25"
@@ -317,10 +317,10 @@
       "description": "Pi extension for four-tier model routing with budget controls and fallbacks; can use Cloudflare Clef as a routing advisor.",
       "category": "agents",
       "language": "TypeScript",
-      "stars": 9,
+      "stars": 10,
       "added": "2026-10-08",
       "created": "2026-06-17",
-      "pushed": "2026-10-25"
+      "pushed": "2026-10-28"
     },
     {
       "name": "judge-clef",
@@ -510,7 +510,7 @@
       "description": "Web search with decision models for source selection, query understanding, and relevance ranking; supports choosing Clef as the model.",
       "category": "apps",
       "language": "TypeScript",
-      "stars": 545,
+      "stars": 547,
       "added": "2026-10-08",
       "created": "2026-09-17",
       "pushed": "2026-10-21"
@@ -750,10 +750,10 @@
       "description": "Local UI and library to run and train LLMs; includes Clef model support and a Clef training benchmark script.",
       "category": "finetuning",
       "language": "Python",
-      "stars": 78616,
+      "stars": 78667,
       "added": "2026-10-08",
       "created": "2023-11-29",
-      "pushed": "2026-10-27"
+      "pushed": "2026-10-28"
     },
     {
       "name": "clef-finetune",
@@ -810,10 +810,10 @@
       "description": "Run open models locally; includes Clef model support in its runners.",
       "category": "selfhost",
       "language": "Go",
-      "stars": 184956,
+      "stars": 185083,
       "added": "2026-10-08",
       "created": "2023-06-26",
-      "pushed": "2026-10-27"
+      "pushed": "2026-10-28"
     },
     {
       "name": "vllm-jev",
@@ -822,7 +822,7 @@
       "description": "Native vLLM serving for Jev-style decision models, with Clef support and export.",
       "category": "selfhost",
       "language": "Python",
-      "stars": 775,
+      "stars": 800,
       "added": "2026-10-08",
       "created": "2026-09-24",
       "pushed": "2026-10-22"
@@ -834,7 +834,7 @@
       "description": "Turn open models into a Jev-style classifier endpoint; includes a Hugging Face server for Clef.",
       "category": "selfhost",
       "language": "Python",
-      "stars": 616,
+      "stars": 617,
       "added": "2026-10-08",
       "created": "2026-09-18",
       "pushed": "2026-10-07"
@@ -846,10 +846,10 @@
       "description": "OpenAI-compatible inference server for Apple Silicon built on MLX, with System One support for the Clef family.",
       "category": "selfhost",
       "language": "Python",
-      "stars": 4040,
+      "stars": 4046,
       "added": "2026-10-08",
       "created": "2026-02-25",
-      "pushed": "2026-10-27"
+      "pushed": "2026-10-28"
     },
     {
       "name": "convert",
@@ -858,7 +858,7 @@
       "description": "Scripts to convert models to GGUF, with recipes for Clef and Clef-flash.",
       "category": "selfhost",
       "language": "Shell",
-      "stars": 58,
+      "stars": 59,
       "added": "2026-10-08",
       "created": "2026-07-08",
       "pushed": "2026-10-25"
@@ -870,7 +870,7 @@
       "description": "Models and conversion recipes for Apple's Core AI on iPhone and Mac, including a Clef-flash port.",
       "category": "selfhost",
       "language": "Python",
-      "stars": 465,
+      "stars": 464,
       "added": "2026-10-08",
       "created": "2026-06-10",
       "pushed": "2026-10-27"
@@ -945,7 +945,7 @@
       "stars": 0,
       "added": "2026-10-08",
       "created": "2026-10-04",
-      "pushed": "2026-10-08"
+      "pushed": "2026-10-27"
     },
     {
       "name": "clef-hrx",
@@ -991,10 +991,10 @@
       "description": "A curated list of decision models (System One / typed decision models): hosted APIs, open-weight models, runtimes, SDKs, applications, benchmarks, and papers.",
       "category": "lists",
       "language": "Python",
-      "stars": 667,
+      "stars": 672,
       "added": "2026-10-08",
       "created": "2026-09-17",
-      "pushed": "2026-10-26"
+      "pushed": "2026-10-28"
     },
     {
       "name": "Hacker News discussion",
@@ -1066,7 +1066,7 @@
       "stars": 34,
       "added": "2026-10-07",
       "created": "2026-09-22",
-      "pushed": "2026-10-22"
+      "pushed": "2026-10-28"
     },
     {
       "name": "Clef Pictionary",
@@ -1367,7 +1367,7 @@
       "stars": 175,
       "added": "2026-10-08",
       "created": "2025-12-18",
-      "pushed": "2026-10-27"
+      "pushed": "2026-10-28"
     },
     {
       "name": "clef-model-router (dwain-barnes)",
