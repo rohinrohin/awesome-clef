@@ -8,7 +8,7 @@ Clef and Clef-flash are Cloudflare's open-weight decision models. They take a st
 
 Community-maintained. Not affiliated with Cloudflare. A listing means a project meets the [inclusion rules](CONTRIBUTING.md#what-gets-listed), not that it has been reviewed for quality or security; read the code before you depend on it. To add a project, open a pull request or [file an issue](https://github.com/rohinrohin/awesome-clef/issues/new?template=submit-project.yml). See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-108 entries · last refreshed 2026-10-28
+108 entries · last refreshed 2026-10-29
 
 ## Contents
 
@@ -91,10 +91,10 @@ Products, services, and pipelines that call Clef.
 - [jev-search](https://github.com/superagents-lab/jev-search) ([site](https://jev.s1.dev)) - Web search with decision models for source selection, query understanding, and relevance ranking; supports choosing Clef as the model.
 - [ry](https://github.com/ygwyg/ry) ([site](https://route-yes-example.burcs.workers.dev)) - Ry stands for route yes: an AI router for 404s, powered by Cloudflare Clef.
 - [awesome-x](https://github.com/RadRebelSam/awesome-x) ([site](https://awesomex.radrebeldeveloper.com)) - Awesome lists that maintain themselves. Crawls GitHub and npm, has a decision model (Cloudflare Clef or Jev) judge each candidate against one sentence you write, then publishes the README and site. No dependencies.
+- [clef (NikhileshThiru)](https://github.com/NikhileshThiru/clef) ([site](https://nikhileshthiru.pages.dev)) - Homelab decision engine running Clef-flash (GGUF) on a 6 GB laptop GPU to triage Gmail, filter news, and watch job boards.
 - [clef-compactor](https://github.com/Gjusev/clef-compactor) - Query-aware RAG context compaction with Cloudflare Clef: keep the evidence, cut noisy retrieval context.
 - [ai-code-review-agent](https://github.com/akshatdodhiya/ai-code-review-agent) ([site](https://cloudflare-code-reviewer.akshat-codes.workers.dev)) - Automated pull-request review agent on Cloudflare Workers: 7-pillar security pipeline, a Clef decision gate, and a multi-model review committee - running entirely on the free tier. Built during ClawBuilders S1:E5.
 - [cf-pr-reviewer](https://github.com/kravchuk-ivan/cf-pr-reviewer) - Automated GitHub PR reviewer on Cloudflare Workers: Clef triage, multi-model review committee, inline one-click suggestions.
-- [clef (NikhileshThiru)](https://github.com/NikhileshThiru/clef) ([site](https://nikhileshthiru.pages.dev)) - Homelab decision engine running Clef-flash (GGUF) on a 6 GB laptop GPU to triage Gmail, filter news, and watch job boards.
 - [clef-rag](https://github.com/MersivMedia/clef-rag) - Clef-steered ingestion and retrieval for any vector database: Cloudflare Workers AI, self-hosted, or local Clef / Clef-flash weights.
 - [clef-theft-detection](https://github.com/Yz613/clef-theft-detection) - Grocery checkout-loss shrink detection service using Cloudflare Clef (@cf/cloudflare/clef).
 - [cloudflare-compliance-reviewer](https://github.com/Clawbuilders/cloudflare-compliance-reviewer) - ClawBuilders S1:E6: a policy-as-code agent committee for GitHub PRs on Cloudflare (Agents SDK, Workflows, R2, Workers AI + Clef, Regorus).
@@ -110,11 +110,11 @@ Playgrounds, games, and small experiments you can run.
 - [clef-webcam](https://github.com/lucataco/clef-webcam) - Run Cloudflare's clef-flash decision model locally on your webcam.
 - [Clef Pictionary](https://github.com/jillesme/clef-pictionary) ([site](https://clef.jilles.fyi), [post](https://x.com/Jilles/status/2107572830225199403)) - Pictionary where Clef-flash on Workers AI guesses your drawing live, with per-word probabilities and an art critic score.
 - [clef-playground (JordanDalton)](https://github.com/JordanDalton/clef-playground) - Playground for Cloudflare's Clef decision models: typed questions, images, latency and cost.
+- [clef-demo](https://github.com/tehtommeh/clef-demo) - Demo of CloudFlare's Clef decision model https://huggingface.co/Cloudflare/clef-flash.
 - [clefcam](https://github.com/tmchow/clefcam) - A camera that follows your rules, powered by Cloudflare Clef Flash.
 - [blind-earth-clef-jev](https://github.com/dylanler/blind-earth-clef-jev) - Blind-Earth land/water maps with Cloudflare Clef / Clef-flash and TypeSafe Jev (System One choice).
 - [bot-club](https://github.com/jackdnl/bot-club) - A playful AI nightclub. Cloudflare Clef-flash decides who gets in, live.
 - [clef-airy](https://github.com/ajdunn2/clef-airy) - Mac/Win Electron app for testing Jev, System One, and similar decision APIs inc. local models like Clef with Ollama. Build requests using forms or JSON and explore structured responses. Made with NativePHP.
-- [clef-demo](https://github.com/tehtommeh/clef-demo) - Demo of CloudFlare's Clef decision model https://huggingface.co/Cloudflare/clef-flash.
 - [clef-playground](https://github.com/szerintedmi/clef-playground) - Local playground for Cloudflare's Clef decision models (clef / clef-flash): edit state, images and questions; see probabilities, latency and cost.
 - [clef-playground (sw30labs)](https://github.com/sw30labs/clef-playground) - Run Cloudflare Clef locally on Apple Silicon with an MLX playground, typed decisions, and a SystemOne-compatible API.
 - [heist](https://github.com/acoyfellow/heist) ([site](https://heist.coey.dev)) - A prompt injection game: get VaultBot, Meta's Llama 3.3 70B on Workers AI, to leak a vault code while Cloudflare Clef scores your message below 0.5.
