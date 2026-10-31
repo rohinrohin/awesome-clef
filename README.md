@@ -8,7 +8,7 @@ Clef and Clef-flash are Cloudflare's open-weight decision models. They take a st
 
 Community-maintained. Not affiliated with Cloudflare. A listing means a project meets the [inclusion rules](CONTRIBUTING.md#what-gets-listed), not that it has been reviewed for quality or security; read the code before you depend on it. To add a project, open a pull request or [file an issue](https://github.com/rohinrohin/awesome-clef/issues/new?template=submit-project.yml). See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-108 entries · last refreshed 2026-10-30
+107 entries · last refreshed 2026-10-31
 
 ## Contents
 
@@ -128,7 +128,6 @@ Benchmarks, evaluations, and head-to-head comparisons.
 - [benchessmark](https://github.com/ickas/benchessmark) - Chess as a benchmark for decision models: Jev vs Clef, graded by Stockfish, with a replay viewer and video export.
 - [clef-evals](https://github.com/Gjusev/clef-evals) ([site](https://pypi.org/project/clef-evals/)) - Calibration-first evaluation toolkit for Cloudflare's Clef decision models. Judge cheap, audit confidence.
 - [system-one-security](https://github.com/ankushchadha/system-one-security) - Rerunnable security experiments on System One decision models (TypeSafe Jev, Cloudflare Clef): state poisoning, prompt injection, truncation, and guard questions.
-- [system1-rerank-bench](https://github.com/dchristopoulos/system1-rerank-bench) - Do System 1 decision models work as RAG rerankers? Jev, Clef-flash and Laya vs an LLM and six open rerankers on BEIR, with paired confidence intervals.
 - [admission-decision-eval](https://github.com/nicia-ai/admission-decision-eval) - Decision models on a knowledge-base write-admission task: Jev, Clef, Clef-flash.
 - [blackbox](https://github.com/acoyfellow/blackbox) ([site](https://blackbox.coey.dev)) - Replay a Pi agent log as a timeline and see which step the Clef model scores as the fault.
 - [decision-map-bench](https://github.com/move38studios/decision-map-bench) - How well do decision models know geography? Jev, Clef, Clef-flash and Laya on a 2° world grid.
@@ -162,10 +161,10 @@ Run the open Clef weights on your own hardware.
 - [convert](https://github.com/ggml-org/convert) ([site](https://huggingface.co/ggml-org)) - Scripts to convert models to GGUF, with recipes for Clef and Clef-flash.
 - [cleffa](https://github.com/zknpr/cleffa) - Native C11 + Metal inference engine for Cloudflare Clef and Clef-Flash on Apple Silicon (BF16, Jev/SystemOne API). Built after ds4.
 - [open-jevlike-infer](https://github.com/Arcobalneo/open-jevlike-infer) ([site](https://huggingface.co/Cloudflare/clef-flash)) - Production inference server for open Jev-like decision models (Jev/SystemOne /v1/systemone). Clef-Flash on vLLM: 45 ms p50, 2x throughput, verified against the reference.
+- [clef-flash-local](https://github.com/turlockmike/clef-flash-local) - Run Cloudflare's Clef-Flash decision model locally on a 16 GB GPU: FP8 + compiled, micro-batched /v1/systemone (Jev/SystemOne API) with Ollama pass-through.
 - [clef-flash](https://github.com/irr/clef-flash) - Local Jev/System One server for Cloudflare/clef-flash — 9B multimodal decision model, one forward pass per request.
 - [Clef-flash GGUF](https://huggingface.co/ggml-org/Clef-Flash-GGUF) - GGUF quantizations of Clef-flash from ggml-org for llama.cpp and other local runtimes.
 - [clef-flash-api](https://github.com/iwaitu/clef-flash-api) ([site](https://hub.docker.com/r/iwaitu/clef-flash-api)) - Resident Clef Flash NVFP4 structured decision API with Docker deployment.
-- [clef-flash-local](https://github.com/turlockmike/clef-flash-local) - Run Cloudflare's Clef-Flash decision model locally on a 16 GB GPU: FP8 + compiled, micro-batched /v1/systemone (Jev/SystemOne API) with Ollama pass-through.
 - [clef-flash-snap](https://github.com/canonical/clef-flash-snap) ([site](https://snapcraft.io/clef-flash)) - Snap package for local inference with Clef-flash.
 - [clef-flash-vllm-fp8](https://github.com/cryguy/clef-flash-vllm-fp8) - Cloudflare Clef-Flash on vLLM on one 24 GB GPU: a /v1/systemone server with an FP8 recipe that keeps its Decision Index score.
 - [clef-hrx](https://github.com/zacharydenton/clef-hrx) - Local Cloudflare CLEF inference on AMD Strix Halo, written in Rust and Loom.
