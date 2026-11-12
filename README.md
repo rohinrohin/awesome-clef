@@ -8,7 +8,7 @@ Clef and Clef-flash are Cloudflare's open-weight decision models. They take a st
 
 Community-maintained. Not affiliated with Cloudflare. A listing means a project meets the [inclusion rules](CONTRIBUTING.md#what-gets-listed), not that it has been reviewed for quality or security; read the code before you depend on it. To add a project, open a pull request or [file an issue](https://github.com/rohinrohin/awesome-clef/issues/new?template=submit-project.yml). See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-107 entries · last refreshed 2026-11-11
+107 entries · last refreshed 2026-11-12
 
 ## Contents
 
@@ -63,6 +63,7 @@ Routers, gates, MCP servers, and skills that put Clef inside coding agents and a
 - [clef-model-router](https://github.com/AbelNavarro/clef-model-router) - Claude Code mod that uses Cloudflare Clef to automatically select the model and reasoning effort for each turn.
 - [odds](https://github.com/acoyfellow/odds) ([site](https://odds.coey.dev)) - Ask for odds, not prose. Clef decision models in Pi codemode through your own authenticated AI Gateway.
 - [judge-clef](https://github.com/nicolasmertens/judge-clef) - Tells you when to /compact: exact Claude Code context size per turn plus a Cloudflare Clef judgment of whether now is a good moment.
+- [pi-system-one](https://github.com/mastnacek/pi-system-one) - System One intelligent classifier router, tool dispatcher, and JEV/Clef decision engine for Pi coding agent.
 - [clef-gate](https://github.com/dwain-barnes/clef-gate) - Claude Code mod: asks a local Clef decision model whether a tool call or subagent is needed before paying for it.
 - [clef-model-router (dwain-barnes)](https://github.com/dwain-barnes/clef-model-router) - Claude Code mod that routes each turn to the cheapest sufficient model with Clef; fork adding a fully local backend (llama-server, Ollama).
 - [clef-screen-triage](https://github.com/sakamoto-sann/clef-screen-triage) - Codex skill that hands screen-state checks to Clef-flash, with a Japanese guide and evaluation notes.
@@ -72,7 +73,6 @@ Routers, gates, MCP servers, and skills that put Clef inside coding agents and a
 - [pi-auto-router](https://github.com/lucasamonrc/pi-auto-router) - An Auto model for pi: classifies each prompt with Cloudflare Clef (or TypeSafe Jev) and routes it to the best-fitting model you have.
 - [pi-magic8ball](https://github.com/neruok/pi-magic8ball) - Advisory choices for Pi with a neutral context builder and Jev or Clef classifiers.
 - [pi-safely](https://github.com/dcowsill/pi-safely) - Claude Code-style auto mode for pi, gated by System One decision models (Cloudflare Clef via OpenRouter, or TypeSafe Jev).
-- [pi-system-one](https://github.com/mastnacek/pi-system-one) - System One intelligent classifier router, tool dispatcher, and JEV/Clef decision engine for Pi coding agent.
 - [pointsman](https://github.com/jadeonstudio/pointsman) - Typed decisions and bounded evidence workflows for agents via MCP, CLI and JS; Jev/Laya runtime adapters and reproducible local Laya/Clef evaluation.
 - [skills-cloudflare-clef](https://github.com/lyhu/skills-cloudflare-clef) - Agent skill for local Cloudflare Clef typed decisions, with classic datasets and live browser benchmarks.
 
@@ -91,8 +91,8 @@ Products, services, and pipelines that call Clef.
 - [jev-search](https://github.com/superagents-lab/jev-search) ([site](https://jev.s1.dev)) - Web search with decision models for source selection, query understanding, and relevance ranking; supports choosing Clef as the model.
 - [ry](https://github.com/ygwyg/ry) ([site](https://route-yes-example.burcs.workers.dev)) - Ry stands for route yes: an AI router for 404s, powered by Cloudflare Clef.
 - [awesome-x](https://github.com/RadRebelSam/awesome-x) ([site](https://awesomex.radrebeldeveloper.com)) - Awesome lists that maintain themselves. Crawls GitHub and npm, has a decision model (Cloudflare Clef or Jev) judge each candidate against one sentence you write, then publishes the README and site. No dependencies.
-- [clef (NikhileshThiru)](https://github.com/NikhileshThiru/clef) ([site](https://nikhileshthiru.pages.dev)) - Homelab decision engine running Clef-flash (GGUF) on a 6 GB laptop GPU to triage Gmail, filter news, and watch job boards.
 - [clef-compactor](https://github.com/Gjusev/clef-compactor) - Query-aware RAG context compaction with Cloudflare Clef: keep the evidence, cut noisy retrieval context.
+- [clef (NikhileshThiru)](https://github.com/NikhileshThiru/clef) ([site](https://nikhileshthiru.pages.dev)) - Homelab decision engine running Clef-flash (GGUF) on a 6 GB laptop GPU to triage Gmail, filter news, and watch job boards.
 - [ai-code-review-agent](https://github.com/akshatdodhiya/ai-code-review-agent) ([site](https://cloudflare-code-reviewer.akshat-codes.workers.dev)) - Automated pull-request review agent on Cloudflare Workers: 7-pillar security pipeline, a Clef decision gate, and a multi-model review committee - running entirely on the free tier. Built during ClawBuilders S1:E5.
 - [cf-pr-reviewer](https://github.com/kravchuk-ivan/cf-pr-reviewer) - Automated GitHub PR reviewer on Cloudflare Workers: Clef triage, multi-model review committee, inline one-click suggestions.
 - [clef-rag](https://github.com/MersivMedia/clef-rag) - Clef-steered ingestion and retrieval for any vector database: Cloudflare Workers AI, self-hosted, or local Clef / Clef-flash weights.
