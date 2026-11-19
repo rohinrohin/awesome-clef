@@ -8,7 +8,7 @@ Clef and Clef-flash are Cloudflare's open-weight decision models. They take a st
 
 Community-maintained. Not affiliated with Cloudflare. A listing means a project meets the [inclusion rules](CONTRIBUTING.md#what-gets-listed), not that it has been reviewed for quality or security; read the code before you depend on it. To add a project, open a pull request or [file an issue](https://github.com/rohinrohin/awesome-clef/issues/new?template=submit-project.yml). See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-107 entries · last refreshed 2026-11-18
+108 entries · last refreshed 2026-11-19
 
 ## Contents
 
@@ -137,6 +137,7 @@ Benchmarks, evaluations, and head-to-head comparisons.
 - [local-decision](https://github.com/mthomas100/local-decision) - Run Cloudflare's Clef decision models locally on Apple Silicon (llama.cpp + MLX), with a calibrated, machine-truth benchmark.
 - [mobile-mcp-navigation-benchmark](https://github.com/guhcostan/mobile-mcp-navigation-benchmark) - Local paired benchmark: Luna vs CLEF-Flash for iOS navigation through Mobile MCP.
 - [system1-decision-benchmark](https://github.com/Sj0605-DataSci/system1-decision-benchmark) - Common-ground benchmark of 50 System-1 decision models (Jev, Clef, Kev, Nimble, Tev1 vs embeddings, rerankers, NLI, prompted LLMs) on 22 datasets.
+- [system1-rerank-bench](https://github.com/dchristopoulos/system1-rerank-bench) - Do System 1 decision models work as RAG rerankers? Jev, Clef-flash and Laya vs an LLM and six open rerankers on BEIR, with paired confidence intervals.
 
 ## Fine-tuning & RL
 
