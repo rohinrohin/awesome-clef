@@ -8,7 +8,7 @@ Clef and Clef-flash are Cloudflare's open-weight decision models. They take a st
 
 Community-maintained. Not affiliated with Cloudflare. A listing means a project meets the [inclusion rules](CONTRIBUTING.md#what-gets-listed), not that it has been reviewed for quality or security; read the code before you depend on it. To add a project, open a pull request or [file an issue](https://github.com/rohinrohin/awesome-clef/issues/new?template=submit-project.yml). See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-108 entries · last refreshed 2026-11-19
+108 entries · last refreshed 2026-11-20
 
 ## Contents
 
@@ -62,10 +62,10 @@ Routers, gates, MCP servers, and skills that put Clef inside coding agents and a
 - [clef-router](https://github.com/Gjusev/clef-router) ([site](https://pypi.org/project/clef-router/)) - Route prompts between cheap and frontier LLMs with Cloudflare's Clef decision model. OpenAI-compatible proxy + library.
 - [clef-model-router](https://github.com/AbelNavarro/clef-model-router) - Claude Code mod that uses Cloudflare Clef to automatically select the model and reasoning effort for each turn.
 - [odds](https://github.com/acoyfellow/odds) ([site](https://odds.coey.dev)) - Ask for odds, not prose. Clef decision models in Pi codemode through your own authenticated AI Gateway.
+- [clef-model-router (dwain-barnes)](https://github.com/dwain-barnes/clef-model-router) - Claude Code mod that routes each turn to the cheapest sufficient model with Clef; fork adding a fully local backend (llama-server, Ollama).
 - [judge-clef](https://github.com/nicolasmertens/judge-clef) - Tells you when to /compact: exact Claude Code context size per turn plus a Cloudflare Clef judgment of whether now is a good moment.
 - [pi-system-one](https://github.com/mastnacek/pi-system-one) - System One intelligent classifier router, tool dispatcher, and JEV/Clef decision engine for Pi coding agent.
 - [clef-gate](https://github.com/dwain-barnes/clef-gate) - Claude Code mod: asks a local Clef decision model whether a tool call or subagent is needed before paying for it.
-- [clef-model-router (dwain-barnes)](https://github.com/dwain-barnes/clef-model-router) - Claude Code mod that routes each turn to the cheapest sufficient model with Clef; fork adding a fully local backend (llama-server, Ollama).
 - [clef-screen-triage](https://github.com/sakamoto-sann/clef-screen-triage) - Codex skill that hands screen-state checks to Clef-flash, with a Japanese guide and evaluation notes.
 - [jev-mcp](https://github.com/drmedia/jev-mcp) - MCP server for decision models with TypeSafe Jev, Cloudflare Clef, OpenRouter, and local providers.
 - [llama-cot-sentinel](https://github.com/u9401066/llama-cot-sentinel) - Step-checked chain of thought for llama-server: a decision model (Clef-Flash) reviews every reasoning step and steers with rollback or reflection.
