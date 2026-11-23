@@ -8,7 +8,7 @@ Clef and Clef-flash are Cloudflare's open-weight decision models. They take a st
 
 Community-maintained. Not affiliated with Cloudflare. A listing means a project meets the [inclusion rules](CONTRIBUTING.md#what-gets-listed), not that it has been reviewed for quality or security; read the code before you depend on it. To add a project, open a pull request or [file an issue](https://github.com/rohinrohin/awesome-clef/issues/new?template=submit-project.yml). See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-108 entries · last refreshed 2026-11-22
+107 entries · last refreshed 2026-11-23
 
 ## Contents
 
@@ -96,7 +96,6 @@ Products, services, and pipelines that call Clef.
 - [ai-code-review-agent](https://github.com/akshatdodhiya/ai-code-review-agent) ([site](https://cloudflare-code-reviewer.akshat-codes.workers.dev)) - Automated pull-request review agent on Cloudflare Workers: 7-pillar security pipeline, a Clef decision gate, and a multi-model review committee - running entirely on the free tier. Built during ClawBuilders S1:E5.
 - [cf-pr-reviewer](https://github.com/kravchuk-ivan/cf-pr-reviewer) - Automated GitHub PR reviewer on Cloudflare Workers: Clef triage, multi-model review committee, inline one-click suggestions.
 - [clef-rag](https://github.com/MersivMedia/clef-rag) - Clef-steered ingestion and retrieval for any vector database: Cloudflare Workers AI, self-hosted, or local Clef / Clef-flash weights.
-- [clef-theft-detection](https://github.com/Yz613/clef-theft-detection) - Grocery checkout-loss shrink detection service using Cloudflare Clef (@cf/cloudflare/clef).
 - [cloudflare-compliance-reviewer](https://github.com/Clawbuilders/cloudflare-compliance-reviewer) - ClawBuilders S1:E6: a policy-as-code agent committee for GitHub PRs on Cloudflare (Agents SDK, Workflows, R2, Workers AI + Clef, Regorus).
 - [compliance-preview-auditor](https://github.com/Clawbuilders/compliance-preview-auditor) - ClawBuilders S1:E6 bonus: audit a live preview URL with Cloudflare Browser Rendering — axe-core, third parties before consent, and Clef vision.
 - [er-decision-support](https://github.com/zalomea/er-decision-support) - CPU-only research prototype for emergency-department triage support, pairing a small web UI and typed API with a local Clef-flash GGUF model.
