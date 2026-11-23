@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22",
+  "updated": "2026-11-23",
   "categories": [
     {
       "id": "official",
@@ -163,7 +163,7 @@
       "stars": 46,
       "added": "2026-10-08",
       "created": "2025-04-07",
-      "pushed": "2026-11-15",
+      "pushed": "2026-11-23",
       "order": 8
     },
     {
@@ -185,10 +185,10 @@
       "description": "Multi-provider AI SDK with a Cloudflare Clef provider for calibrated decide() calls alongside generate and stream.",
       "category": "sdks",
       "language": "TypeScript",
-      "stars": 167,
+      "stars": 166,
       "added": "2026-10-08",
       "created": "2025-05-31",
-      "pushed": "2026-11-22"
+      "pushed": "2026-11-23"
     },
     {
       "name": "yoagent",
@@ -197,7 +197,7 @@
       "description": "Rust agent loop with a decision module and a Workers integration, including a Clef worker example.",
       "category": "sdks",
       "language": "Rust",
-      "stars": 379,
+      "stars": 380,
       "added": "2026-10-08",
       "created": "2026-02-16",
       "pushed": "2026-11-15"
@@ -380,7 +380,7 @@
       "stars": 0,
       "added": "2026-10-08",
       "created": "2026-10-06",
-      "pushed": "2026-10-06"
+      "pushed": "2026-11-23"
     },
     {
       "name": "clef-browser",
@@ -489,7 +489,8 @@
       "stars": 0,
       "added": "2026-10-08",
       "created": "2026-10-06",
-      "pushed": "2026-10-09"
+      "pushed": "2026-10-09",
+      "gone": true
     },
     {
       "name": "awesome-x",
@@ -510,7 +511,7 @@
       "description": "Web search with decision models for source selection, query understanding, and relevance ranking; supports choosing Clef as the model.",
       "category": "apps",
       "language": "TypeScript",
-      "stars": 564,
+      "stars": 563,
       "added": "2026-10-08",
       "created": "2026-09-17",
       "pushed": "2026-11-07"
@@ -717,7 +718,7 @@
       "stars": 0,
       "added": "2026-10-08",
       "created": "2026-10-01",
-      "pushed": "2026-11-17"
+      "pushed": "2026-11-22"
     },
     {
       "name": "mobile-mcp-navigation-benchmark",
@@ -750,10 +751,10 @@
       "description": "Local UI and library to run and train LLMs; includes Clef model support and a Clef training benchmark script.",
       "category": "finetuning",
       "language": "Python",
-      "stars": 79960,
+      "stars": 80062,
       "added": "2026-10-08",
       "created": "2023-11-29",
-      "pushed": "2026-11-22"
+      "pushed": "2026-11-23"
     },
     {
       "name": "clef-finetune",
@@ -810,7 +811,7 @@
       "description": "Run open models locally; includes Clef model support in its runners.",
       "category": "selfhost",
       "language": "Go",
-      "stars": 187844,
+      "stars": 187901,
       "added": "2026-10-08",
       "created": "2023-06-26",
       "pushed": "2026-11-22"
@@ -846,10 +847,10 @@
       "description": "OpenAI-compatible inference server for Apple Silicon built on MLX, with System One support for the Clef family.",
       "category": "selfhost",
       "language": "Python",
-      "stars": 4172,
+      "stars": 4177,
       "added": "2026-10-08",
       "created": "2026-02-25",
-      "pushed": "2026-11-22"
+      "pushed": "2026-11-23"
     },
     {
       "name": "convert",
@@ -861,7 +862,7 @@
       "stars": 74,
       "added": "2026-10-08",
       "created": "2026-07-08",
-      "pushed": "2026-11-21"
+      "pushed": "2026-11-22"
     },
     {
       "name": "coreai-model-zoo",
@@ -870,7 +871,7 @@
       "description": "Models and conversion recipes for Apple's Core AI on iPhone and Mac, including a Clef-flash port.",
       "category": "selfhost",
       "language": "Python",
-      "stars": 467,
+      "stars": 468,
       "added": "2026-10-08",
       "created": "2026-06-10",
       "pushed": "2026-11-20"
@@ -991,10 +992,10 @@
       "description": "A curated list of decision models (System One / typed decision models): hosted APIs, open-weight models, runtimes, SDKs, applications, benchmarks, and papers.",
       "category": "lists",
       "language": "Python",
-      "stars": 725,
+      "stars": 728,
       "added": "2026-10-08",
       "created": "2026-09-17",
-      "pushed": "2026-11-13"
+      "pushed": "2026-11-23"
     },
     {
       "name": "Hacker News discussion",
@@ -1066,7 +1067,7 @@
       "stars": 49,
       "added": "2026-10-07",
       "created": "2026-09-22",
-      "pushed": "2026-11-19"
+      "pushed": "2026-11-23"
     },
     {
       "name": "Clef Pictionary",
@@ -1367,7 +1368,7 @@
       "stars": 199,
       "added": "2026-10-08",
       "created": "2025-12-18",
-      "pushed": "2026-11-22"
+      "pushed": "2026-11-23"
     },
     {
       "name": "clef-model-router (dwain-barnes)",
