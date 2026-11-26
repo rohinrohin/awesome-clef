@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "categories": [
     {
       "id": "official",
@@ -188,7 +188,7 @@
       "stars": 167,
       "added": "2026-10-08",
       "created": "2025-05-31",
-      "pushed": "2026-11-25"
+      "pushed": "2026-11-26"
     },
     {
       "name": "yoagent",
@@ -209,10 +209,10 @@
       "description": "Desktop LLM gateway that aggregates provider quotas for Claude Code and similar tools; ships a Cloudflare Clef provider.",
       "category": "sdks",
       "language": "Rust",
-      "stars": 295,
+      "stars": 296,
       "added": "2026-10-08",
       "created": "2026-04-24",
-      "pushed": "2026-11-22"
+      "pushed": "2026-11-26"
     },
     {
       "name": "clef-server",
@@ -514,7 +514,7 @@
       "stars": 562,
       "added": "2026-10-08",
       "created": "2026-09-17",
-      "pushed": "2026-11-07"
+      "pushed": "2026-11-26"
     },
     {
       "name": "er-decision-support",
@@ -751,10 +751,10 @@
       "description": "Local UI and library to run and train LLMs; includes Clef model support and a Clef training benchmark script.",
       "category": "finetuning",
       "language": "Python",
-      "stars": 80228,
+      "stars": 80291,
       "added": "2026-10-08",
       "created": "2023-11-29",
-      "pushed": "2026-11-25"
+      "pushed": "2026-11-26"
     },
     {
       "name": "clef-finetune",
@@ -763,7 +763,7 @@
       "description": "Fine-tune Cloudflare's open-source Clef / Clef-flash decision models (LoRA + joint schema head) for vertical decisions like insurance claims and compliance",
       "category": "finetuning",
       "language": "Python",
-      "stars": 6,
+      "stars": 7,
       "added": "2026-10-08",
       "created": "2026-10-02",
       "pushed": "2026-10-02"
@@ -811,10 +811,10 @@
       "description": "Run open models locally; includes Clef model support in its runners.",
       "category": "selfhost",
       "language": "Go",
-      "stars": 188102,
+      "stars": 188213,
       "added": "2026-10-08",
       "created": "2023-06-26",
-      "pushed": "2026-11-24"
+      "pushed": "2026-11-26"
     },
     {
       "name": "vllm-jev",
@@ -823,7 +823,7 @@
       "description": "Native vLLM serving for Jev-style decision models, with Clef support and export.",
       "category": "selfhost",
       "language": "Python",
-      "stars": 957,
+      "stars": 968,
       "added": "2026-10-08",
       "created": "2026-09-24",
       "pushed": "2026-11-24"
@@ -847,10 +847,10 @@
       "description": "OpenAI-compatible inference server for Apple Silicon built on MLX, with System One support for the Clef family.",
       "category": "selfhost",
       "language": "Python",
-      "stars": 4186,
+      "stars": 4188,
       "added": "2026-10-08",
       "created": "2026-02-25",
-      "pushed": "2026-11-25"
+      "pushed": "2026-11-26"
     },
     {
       "name": "convert",
@@ -862,7 +862,7 @@
       "stars": 74,
       "added": "2026-10-08",
       "created": "2026-07-08",
-      "pushed": "2026-11-22"
+      "pushed": "2026-11-26"
     },
     {
       "name": "coreai-model-zoo",
@@ -871,7 +871,7 @@
       "description": "Models and conversion recipes for Apple's Core AI on iPhone and Mac, including a Clef-flash port.",
       "category": "selfhost",
       "language": "Python",
-      "stars": 468,
+      "stars": 467,
       "added": "2026-10-08",
       "created": "2026-06-10",
       "pushed": "2026-11-20"
@@ -983,7 +983,7 @@
       "stars": 0,
       "added": "2026-10-08",
       "created": "2026-10-07",
-      "pushed": "2026-11-20"
+      "pushed": "2026-11-26"
     },
     {
       "name": "awesome-decision-models",
@@ -1064,10 +1064,10 @@
       "description": "Claude Code plugin that auto-picks the right model for each turn — micro, low, medium, or high tier — using Jev/Clef routing.",
       "category": "agents",
       "language": "JavaScript",
-      "stars": 51,
+      "stars": 52,
       "added": "2026-10-07",
       "created": "2026-09-22",
-      "pushed": "2026-11-23"
+      "pushed": "2026-11-26"
     },
     {
       "name": "Clef Pictionary",
@@ -1368,7 +1368,7 @@
       "stars": 200,
       "added": "2026-10-08",
       "created": "2025-12-18",
-      "pushed": "2026-11-25"
+      "pushed": "2026-11-26"
     },
     {
       "name": "clef-model-router (dwain-barnes)",
